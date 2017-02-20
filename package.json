@@ -1,0 +1,59 @@
+{
+  "name": "typescript-webpack-react-jest",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "@types/cheerio": "0.17.31",
+    "@types/enzyme": "2.7.4",
+    "@types/jest": "18.1.1",
+    "@types/react": "15.0.8",
+    "@types/react-dom": "0.14.23",
+    "autoprefixer": "6.7.2",
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.23.0",
+    "babel-preset-es2016": "6.22.0",
+    "css-loader": "0.26.1",
+    "enzyme": "2.7.1",
+    "extract-text-webpack-plugin": "2.0.0-rc.3",
+    "identity-obj-proxy": "2.0.0",
+    "jest": "18.0.0",
+    "jest-cli": "18.0.0",
+    "postcss": "5.2.12",
+    "postcss-loader": "1.2.2",
+    "react": "15.4.2",
+    "react-addons-test-utils": "15.4.2",
+    "react-dom": "15.4.2",
+    "source-map-loader": "0.1.5",
+    "style-loader": "0.13.1",
+    "ts-jest": "18.0.0",
+    "ts-loader": "2.0.0",
+    "typed-css-modules": "0.2.0",
+    "typescript": "2.1.5",
+    "wallaby-webpack": "0.0.33",
+    "webpack": "2.2.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "tcm -c ./site",
+    "build": "webpack --env=dev",
+    "test": "jest --no-cache"
+  },
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/dependencies/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/dependencies/mocks/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  }
+}

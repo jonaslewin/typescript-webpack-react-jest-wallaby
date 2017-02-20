@@ -1,0 +1,10 @@
+{
+  "passPerPreset": true,
+  "presets": [ "es2016" ],
+  "plugins": [],
+  "env": {
+    "test": {
+      "plugins": [ "transform-es2015-modules-commonjs" ]
+    }
+  }
+}

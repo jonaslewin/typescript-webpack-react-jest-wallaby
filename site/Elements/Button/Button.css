@@ -1,0 +1,19 @@
+﻿.button {
+    border: 1px solid #222;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px; 
+}
+
+.on {
+    composes: button;
+    background-color: #3192b3;
+    color: white;
+}
+
+.off {
+    composes: button; 
+    background-color: #e76425;
+    color: black;
+}
