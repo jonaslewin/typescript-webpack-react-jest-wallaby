@@ -1,5 +1,7 @@
 "use strict";
 
+process.env.BABEL_ENV = 'test';
+
 module.exports = function (wallaby) {
     return {
         files: [
@@ -12,6 +14,10 @@ module.exports = function (wallaby) {
         env: {
             type: "node",
             runner: "node"
+        },
+        preprocessors: {
+          '**/*.js?(x)': file => require('babel-core')
+            .transform(file.content, {babelrc: true, sourceMap: true, filename: file.path})
         },
         testFramework: "jest",
         debug: true,
